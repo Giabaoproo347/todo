@@ -1,0 +1,155 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+$color: #d61817;
+$border_radius: 10px;
+$input_height: 40px;
+
+.custom-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: none;
+  border-radius: $border_radius;
+  width: 20%;
+  background-color: #ebecf0;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.container-detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: none;
+  border-radius: $border_radius;
+  width: 40% !important;
+  min-height: 50%;
+  background-color: #ebecf0;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.custom-con {
+  border: none;
+  border-radius: $border_radius;
+  min-height: 60px;
+  max-width: 50%;
+  background-color: white;
+}
+
+.custom-cb {
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  transform: translateY(20%);
+}
+
+.custom-search {
+  border-radius: $border_radius !important;
+}
+
+.title {
+  font-size: 20px;
+  color: $color;
+}
+
+.label {
+  font-size: 14px;
+  color: black;
+}
+
+input .form-control {
+  height: $input_height !important;
+  outline: 0;
+}
+
+.ng-select {
+  .ng-select-container {
+    height: $input_height !important;
+    border-radius: $border_radius !important;
+  }
+}
+
+.custom-input {
+  border-radius: $border_radius !important;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+  right: 10px;
+  top: 45%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+}
+
+.btn-custom {
+  background: $color;
+  border-radius: 10px;
+  padding: 8px 40px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-back-custom {
+  background: #3232e6;
+  border-radius: 10px;
+  padding: 8px 40px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-save-custom {
+  background: $color;
+  border-radius: 10px;
+  padding: 8px 40px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-detail {
+  background: #24d6b8;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  height: 30px;
+  width: 80px;
+}
+
+.btn-remove {
+  background: $color;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  height: 30px;
+  width: 80px;
+}
+
+.error-message {
+  color: $color;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

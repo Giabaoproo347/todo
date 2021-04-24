@@ -1,0 +1,32 @@
+<div class="container custom-container">
+  <div class="form-group row p-md-3 offset-md-3">
+    <div class="col-md-6 font-weight-bold text-center">
+      <span class="title">Todo List</span>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-9 d-flex justify-content-end">
+      <input type="text" class="form-control w-25 custom-search" placeholder="Search by title" [(ngModel)]="searchTitle">
+    </div>
+  </div>
+
+  <div class="form-group row custom-con p-md-3 offset-md-3" *ngFor="let post of (posts$ | async) | search :searchTitle">
+    <div class="col-md-6 font-weight-bold">
+      <input type="checkbox" class="custom-cb mr-2"  (change)="onChangeCheckbox(post, $event)">
+      {{post.title}}
+    </div>
+
+    <div class="col-md-6 text-right">
+      <button class="mr-2 btn-detail" (click)="navigateToDetail(post)">Detail</button>
+      <button class="btn-remove" (click)="removePost(post)">Remove</button>
+    </div>
+  </div>
+
+  <div class="form-group row w-75" *ngIf="checkedList.length > 0">
+    <div class="col-12 text-right">
+      <button class=" mr-2 btn-back-custom">Done</button>
+      <button class="btn-save-custom" (click)="removeAllPost()">Remove</button>
+    </div>
+  </div>
+</div>

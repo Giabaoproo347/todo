@@ -1,0 +1,56 @@
+<form [formGroup]="postForm" class="container p-3 offset-md-4">
+  <div class="form-group row">
+    <div class="col-md-6 font-weight-bold text-center">
+      <span class="title">{{isUpdate ? "Update Post" : "Create Post"}}</span>
+    </div>
+  </div>
+
+  <div class="form-group mt-2 col-md-6" [hidden]="!isUpdate">
+    <label class="label font-weight-bold">ID</label>
+    <input type="text" readonly class="form-control custom-input" formControlName="id">
+  </div>
+
+  <div class="form-group mt-2 col-md-6">
+    <label class="label font-weight-bold">Title</label>
+    <input type="text" class="form-control custom-input" placeholder="Add new task" formControlName="title">
+    <span *ngIf="(form.title.touched || form.title.dirty)
+            && form.title.hasError('required')"
+          class="error-message">
+      Field is required
+    </span>
+  </div>
+
+  <div class="form-group mt-2 col-md-6">
+    <label class="label font-weight-bold">Description</label>
+    <textarea type="text" class="form-control custom-input" style="height: 200px"
+              formControlName="description"></textarea>
+  </div>
+
+  <div class="form-group mt-2 col-md-6">
+    <label class="label font-weight-bold">Due date</label>
+    <div class="input-icons">
+      <span (click)="picker.open()"><i class="fa fa-calendar icon"></i></span>
+      <input type="text" class="form-control custom-input input-field"
+             formControlName="dueDate"
+             [matDatepicker]="picker" [min]="today">
+      <mat-datepicker #picker></mat-datepicker>
+    </div>
+  </div>
+
+  <div class="form-group mt-2 col-md-6">
+    <label class="label font-weight-bold">Priority</label>
+    <ng-select [items]="priorityList"
+               bindLabel="name"
+               bindValue="value"
+               formControlName="priority"
+               class="custom-input">
+    </ng-select>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-6 text-right">
+      <button class="mr-2 mt-2 mb-2 btn-back-custom" (click)="back()">Back</button>
+      <button class="mt-2 mb-2 btn-custom" (click)="onSubmit()">{{isUpdate ? "Update" : "Add"}}</button>
+    </div>
+  </div>
+</form>
